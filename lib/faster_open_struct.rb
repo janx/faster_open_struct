@@ -45,6 +45,10 @@ module Faster
       end
     end
 
+    def delete_field(name)
+      @hash.delete(name)
+    end
+
     def __new_ostruct_member__(method_name_sym)
       self.class.module_eval <<-END_EVAL, __FILE__, __LINE__ + 1
       def #{ method_name_sym }
